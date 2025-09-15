@@ -1,6 +1,6 @@
 # deno-cgi
 
-**deno-cgi** provides an embeddable
+`deno-cgi` provides an embeddable
 [Common Gateway Interface (CGI)](https://www.rfc-editor.org/rfc/rfc3875)
 implementation for [Deno](https://deno.com/).
 
