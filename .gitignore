@@ -13,5 +13,5 @@
 .history/
 
 # Files being copied
-source/README.md
-source/LICENSE
+#source/README.md
+#source/LICENSE
