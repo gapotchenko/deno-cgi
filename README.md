@@ -82,6 +82,6 @@ be dangerous. Make sure to:
 
 ## Packages
 
-You can install `deno-cgi` from:
+You can install `deno-cgi` using:
 
-- [JSR](https://jsr.io/@gapotchenko/deno-cgi)
+- [JSR Package Registry](https://jsr.io/@gapotchenko/deno-cgi)
