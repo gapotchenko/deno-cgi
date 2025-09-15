@@ -17,7 +17,7 @@ echo "Content-Type: text/plain;charset=UTF-8"
 echo
 echo "Hello CGI"`;
 
-Deno.serve((request) => await executeCgi(request, "/bin/sh", ["-c", script]));
+Deno.serve(async (request) => await executeCgi(request, "/bin/sh", ["-c", script]));
 ```
 
 Start the server with `deno run` and visit `http://localhost:8000` to see the
