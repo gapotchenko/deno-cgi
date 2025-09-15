@@ -4,24 +4,28 @@ async function handler(req: Request): Promise<Response> {
   const url = new URL(req.url);
 
   if (url.pathname === "/") {
-    const cgiScript = `echo "$SERVER_PROTOCOL 200 OK"
+    return await handleCgi(req);
+  } else {
+    return new Response("404 Not Found", { status: 404 });
+  }
+}
+
+async function handleCgi(req: Request): Promise<Response> {
+  const script = `echo "$SERVER_PROTOCOL 200 OK"
 echo "Content-Type: text/plain;charset=UTF-8"
 echo
 echo "Hello CGI"`;
 
-    let cgiShellCommand = "/bin/sh";
-    let cgiShellArgs = ["-e", "-c"];
+  let shellCommand = "/bin/sh";
+  let shellArgs = ["-e", "-c"];
 
-    if (Deno.build.os === "windows") {
-      // https://github.com/gapotchenko/gnu-tk
-      cgiShellArgs = ["-l", cgiShellCommand, ...cgiShellArgs];
-      cgiShellCommand = "gnu-tk";
-    }
-
-    return await executeCgi(req, cgiShellCommand, [...cgiShellArgs, cgiScript]);
-  } else {
-    return new Response("404 Not Found", { status: 404 });
+  if (Deno.build.os === "windows") {
+    // https://github.com/gapotchenko/gnu-tk
+    shellArgs = ["-l", shellCommand, ...shellArgs];
+    shellCommand = "gnu-tk";
   }
+
+  return await executeCgi(req, shellCommand, [...shellArgs, script]);
 }
 
 Deno.serve(handler);
