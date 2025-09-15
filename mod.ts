@@ -437,7 +437,7 @@ function parseCgiHead(
 function setCgiHeaders(
   headers: Headers,
   cgiHeaders: Map<string, string>,
-): void {
+) {
   for (const [k, v] of cgiHeaders) {
     // Filter hop-by-hop or unsafe headers if needed (minimal set here)
     if (!/^(connection|transfer-encoding)$/i.test(k)) {
