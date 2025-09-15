@@ -5,7 +5,7 @@
 implementation for [Deno](https://deno.com/).
 
 It allows you to run shell scripts, CGI programs, or other executables directly
-in a Deno HTTP server.
+from a Deno HTTP server.
 
 ## Example
 
