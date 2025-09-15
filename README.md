@@ -62,7 +62,6 @@ RAM.
 - Automatically sets CGI environment variables (e.g. `REQUEST_METHOD`,
   `QUERY_STRING`, `SERVER_PROTOCOL`)
 - Supports both **batch** and **streaming** response modes
-- Works cross-platform (Unix and Windows)
 
 ## When to Use
 
