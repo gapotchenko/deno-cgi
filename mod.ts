@@ -31,63 +31,63 @@ export type CgiExecutionOptions = {
   env?: Record<string, string>;
 
   /**
-   *  A value to use for `SERVER_SOFTWARE` environment variable of CGI.
+   *  A value to use for `SERVER_SOFTWARE` environment variable of CGI process.
    *
    *  When this option is undefined, the environment variable is set to `deno-cgi` value.
    */
   serverSoftware?: string;
 
   /**
-   *  A value to use for `SERVER_PROTOCOL` environment variable of CGI.
+   *  A value to use for `SERVER_PROTOCOL` environment variable of CGI process.
    *
    *  When this option is undefined, the environment variable is set to `HTTP/1.1` value.
    */
   serverProtocol?: CgiServerProtocol;
 
   /**
-   *  A value to use for `SERVER_PORT` environment variable of CGI.
+   *  A value to use for `SERVER_PORT` environment variable of CGI process.
    *
    *  When this option is undefined, the server port is automatically detected from a request.
    */
   serverPort?: string;
 
   /**
-   *  A value to use for `REMOTE_ADDR` environment variable of CGI.
+   *  A value to use for `REMOTE_ADDR` environment variable of CGI process.
    *
    *  When this option is undefined, the environment variable is set to an empty value.
    */
   remoteAddr?: string;
 
   /**
-   *  A value to use for `REMOTE_HOST` environment variable of CGI.
+   *  A value to use for `REMOTE_HOST` environment variable of CGI process.
    *
    *  When this option is undefined, the environment variable is set to an empty value.
    */
   remoteHost?: string;
 
   /**
-   *  A value to use for `SCRIPT_NAME` environment variable of CGI.
+   *  A value to use for `SCRIPT_NAME` environment variable of CGI process.
    *
    *  When this option is undefined, the environment variable is set to an empty value.
    */
   scriptName?: string;
 
   /**
-   *  A value to use for `PATH_INFO` environment variable of CGI.
+   *  A value to use for `PATH_INFO` environment variable of CGI process.
    *
    *  When this option is undefined, the environment variable is set to an empty value.
    */
   pathInfo?: string;
 
   /**
-   *  A value to use for `PATH_TRANSLATED` environment variable of CGI.
+   *  A value to use for `PATH_TRANSLATED` environment variable of CGI process.
    *
    *  When this option is undefined, the environment variable is set to an empty value.
    */
   pathTranslated?: string;
 
   /**
-   * A value to use for autodetecting the value of `SERVER_PORT` variable.
+   * A value to use for autodetecting the value of `SERVER_PORT` environment variable for CGI process.
    *
    * When this option is undefined, the network protocol is automatically detected from a request.
    */
