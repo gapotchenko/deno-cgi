@@ -33,9 +33,7 @@ well for short responses.
 
 ### Streaming mode
 
-For long-running scripts or continuous output, you can enable streaming mode. In
-this mode, response chunks are sent to the client as soon as they are produced
-by the CGI program.
+For long-running scripts or continuous output, you can enable streaming mode.
 
 The streaming mode allows to stream a CGI command response in chunks as soon as
 they arrive. To accomplish that, the options object should be passed to
