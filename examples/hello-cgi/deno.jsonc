@@ -1,4 +1,7 @@
 {
+  "imports": {
+    "@gapotchenko/deno-cgi": "jsr:@gapotchenko/deno-cgi@^1.0.0"
+  },
   "compilerOptions": {
     "strict": true,
     "noFallthroughCasesInSwitch": true,

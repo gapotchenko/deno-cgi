@@ -17,7 +17,9 @@ echo "Content-Type: text/plain;charset=UTF-8"
 echo
 echo "Hello CGI"`;
 
-Deno.serve(async (request) => await executeCgi(request, "/bin/sh", ["-c", script]));
+Deno.serve(async (request) =>
+  await executeCgi(request, "/bin/sh", ["-c", script])
+);
 ```
 
 Start the server with `deno run` and visit `http://localhost:8000` to see the
@@ -78,7 +80,8 @@ be dangerous. Make sure to:
 - Consider sandboxing (e.g. using
   [bwrap](https://github.com/containers/bubblewrap) or containers)
 
-To assist with script validation, the module provides `isReservedCgiEnvVar` function.
+To assist with script validation, the module provides `isReservedCgiEnvVar`
+function.
 
 ## Packages
 

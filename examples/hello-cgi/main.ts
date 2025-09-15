@@ -1,4 +1,4 @@
-import { executeCgi } from "jsr:@gapotchenko/deno-cgi";
+import { executeCgi } from "@gapotchenko/deno-cgi";
 
 async function handler(req: Request): Promise<Response> {
   const url = new URL(req.url);

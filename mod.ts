@@ -204,7 +204,7 @@ async function getCgiResponse(child: Deno.ChildProcess): Promise<Response> {
       : "Malformed CGI response (no headers).";
     // Include exit code & stderr in headers for diagnostics (not body).
     return new Response(
-      body.length ? body : new TextEncoder().encode(message),
+      (body.length ? body : new TextEncoder().encode(message)) as BufferSource,
       {
         status: exitCode === 0 && body.length ? 200 : 500,
         headers: {
@@ -234,7 +234,7 @@ async function getCgiResponse(child: Deno.ChildProcess): Promise<Response> {
     denoHeaders.set("Content-Length", body.length.toString());
   }
 
-  return new Response(body, { status, headers: denoHeaders });
+  return new Response(body as BufferSource, { status, headers: denoHeaders });
 
   // ----------------------------------------------
 
