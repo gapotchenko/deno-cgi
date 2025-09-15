@@ -1,0 +1,9 @@
+{
+  "name": "@gapotchenko/deno-cgi",
+  "version": "0.1.0",
+  "license": "MPL-2.0",
+  "exports": "./mod.ts",
+  "imports": {
+    "@std/streams": "jsr:@std/streams@^1.0.12"
+  }
+}
