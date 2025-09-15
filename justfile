@@ -38,7 +38,4 @@ lint:
     deno lint
 
 publish:
-    cp -l ../README.md .
-    cp -l ../LICENSE .
-    #trap 'rm README.md; rm LICENSE' EXIT
     deno publish
