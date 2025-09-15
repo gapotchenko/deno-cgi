@@ -61,6 +61,7 @@ RAM.
   interpreters
 - Automatically sets CGI environment variables (e.g. `REQUEST_METHOD`,
   `QUERY_STRING`, `SERVER_PROTOCOL`)
+- Ensures that CGI responses are HTTP-compliant
 - Supports both **batch** and **streaming** response modes
 
 ## When to Use
