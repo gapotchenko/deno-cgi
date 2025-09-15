@@ -1,0 +1,25 @@
+{
+  "version": "5",
+  "specifiers": {
+    "jsr:@gapotchenko/deno-cgi@*": "0.1.0",
+    "jsr:@std/bytes@^1.0.6": "1.0.6",
+    "jsr:@std/streams@^1.0.12": "1.0.12"
+  },
+  "jsr": {
+    "@gapotchenko/deno-cgi@0.1.0": {
+      "integrity": "8960d37ddf68d2a6d1f9a29e0ab7d09c04fdb590e672ba5aa177f63dde6318ea",
+      "dependencies": [
+        "jsr:@std/streams"
+      ]
+    },
+    "@std/bytes@1.0.6": {
+      "integrity": "f6ac6adbd8ccd99314045f5703e23af0a68d7f7e58364b47d2c7f408aeb5820a"
+    },
+    "@std/streams@1.0.12": {
+      "integrity": "ae925fa1dc459b1abf5cbaa28cc5c7b0485853af3b2a384b0dc22d86e59dfbf4",
+      "dependencies": [
+        "jsr:@std/bytes"
+      ]
+    }
+  }
+}
