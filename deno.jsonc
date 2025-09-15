@@ -1,6 +1,6 @@
 {
   "name": "@gapotchenko/deno-cgi",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "license": "MPL-2.0",
   "exports": "./mod.ts",
   "imports": {
@@ -8,7 +8,9 @@
   },
   "publish": {
     "exclude": [
-      "examples/"
+      "examples/",
+      "justfile",
+      "*.code-workspace"
     ]
   },
   "compilerOptions": {
