@@ -66,7 +66,7 @@ RAM.
 
 ## When to Use
 
-- Embedding legacy CGI scripts into a modern Deno server.
+- Embedding legacy CGI scripts into a modern Deno server
 - Running shell commands as HTTP endpoints (with proper sandboxing!)
 - Prototyping HTTP services quickly without a full web framework
 
