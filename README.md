@@ -79,3 +79,9 @@ be dangerous. Make sure to:
 - Restrict access where appropriate
 - Consider sandboxing (e.g. using
   [bwrap](https://github.com/containers/bubblewrap) or containers)
+
+## Packages
+
+You can install `deno-cgi` from:
+
+- [JSR](https://jsr.io/@gapotchenko/deno-cgi)
