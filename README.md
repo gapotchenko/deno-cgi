@@ -5,7 +5,7 @@
 implementation for [Deno](https://deno.com/).
 
 It allows you to run shell scripts, CGI programs, or other executables directly
-in a Deno HTTP server.
+from a Deno HTTP server.
 
 ## Example
 
@@ -61,8 +61,8 @@ RAM.
   interpreters
 - Automatically sets CGI environment variables (e.g. `REQUEST_METHOD`,
   `QUERY_STRING`, `SERVER_PROTOCOL`)
+- Ensures that CGI responses are HTTP-compliant
 - Supports both **batch** and **streaming** response modes
-- Works cross-platform (Unix and Windows)
 
 ## When to Use
 
