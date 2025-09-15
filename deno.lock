@@ -2,7 +2,6 @@
   "version": "5",
   "specifiers": {
     "jsr:@std/bytes@^1.0.6": "1.0.6",
-    "jsr:@std/streams@*": "1.0.12",
     "jsr:@std/streams@^1.0.12": "1.0.12"
   },
   "jsr": {

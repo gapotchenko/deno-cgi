@@ -25,6 +25,7 @@ develop:
 # Format source code
 [group("development")]
 format:
+    just --fmt --unstable
     deno fmt
 
 # Format source code
