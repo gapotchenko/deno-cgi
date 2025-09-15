@@ -87,6 +87,27 @@ export type CgiExecutionOptions = {
   pathTranslated?: string;
 
   /**
+   *  A value to use for `AUTH_TYPE` environment variable of CGI process.
+   *
+   *  When this option is undefined, the environment variable is set to an empty value.
+   */
+  authType?: string;
+
+  /**
+   *  A value to use for `REMOTE_IDENT` environment variable of CGI process.
+   *
+   *  When this option is undefined, the environment variable is set to an empty value.
+   */
+  remoteIdent?: string;
+
+  /**
+   *  A value to use for `REMOTE_USER` environment variable of CGI process.
+   *
+   *  When this option is undefined, the environment variable is set to an empty value.
+   */
+  remoteUser?: string;
+
+  /**
    * A value to use for autodetecting the value of `SERVER_PORT` environment variable for CGI process.
    *
    * When this option is undefined, the network protocol is automatically detected from a request.
@@ -120,21 +141,24 @@ export async function executeCgi(
       ? "443"
       : networkProtocol === "http"
       ? "80"
-      : "");
+      : undefined);
 
   const env: Record<string, string> = {
     // Standard (RFC 3875)
+    AUTH_TYPE: options?.authType ?? "",
     GATEWAY_INTERFACE: "CGI/1.1",
     PATH_INFO: options.pathInfo ?? "",
     PATH_TRANSLATED: options.pathTranslated ?? "",
     QUERY_STRING: url.search.length > 1 ? url.search.slice(1) : "",
     REMOTE_ADDR: options.remoteAddr ?? "", // Request doesn't expose remote address
     REMOTE_HOST: options.remoteHost ?? "", // Request doesn't expose remote host
+    REMOTE_IDENT: options.remoteIdent ?? "",
+    REMOTE_USER: options.remoteUser ?? "",
     REQUEST_METHOD: request.method,
     REQUEST_URI: url.pathname + (url.search ?? ""),
     SCRIPT_NAME: options.scriptName ?? "",
     SERVER_NAME: serverName ?? "",
-    SERVER_PORT: serverPort,
+    SERVER_PORT: serverPort ?? "",
     SERVER_PROTOCOL: options.serverProtocol ?? "HTTP/1.1", // Request doesn't expose the exact version
     SERVER_SOFTWARE: options.serverSoftware ?? "deno-cgi",
   };
