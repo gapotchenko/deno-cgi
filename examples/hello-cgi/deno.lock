@@ -1,13 +1,13 @@
 {
   "version": "5",
   "specifiers": {
-    "jsr:@gapotchenko/deno-cgi@*": "0.1.0",
+    "jsr:@gapotchenko/deno-cgi@*": "1.0.0",
     "jsr:@std/bytes@^1.0.6": "1.0.6",
     "jsr:@std/streams@^1.0.12": "1.0.12"
   },
   "jsr": {
-    "@gapotchenko/deno-cgi@0.1.0": {
-      "integrity": "8960d37ddf68d2a6d1f9a29e0ab7d09c04fdb590e672ba5aa177f63dde6318ea",
+    "@gapotchenko/deno-cgi@1.0.0": {
+      "integrity": "61c05ded1451bdc394861821aa7f5c9580726e2758d2236838853f06976dd056",
       "dependencies": [
         "jsr:@std/streams"
       ]
