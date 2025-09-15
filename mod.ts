@@ -87,8 +87,7 @@ export type CgiExecutionOptions = {
   pathTranslated?: string;
 
   /**
-   * A value to use for setting the value of `HTTPS` CGI environment variable.
-   * The value is also used for autodetecting the value of `SERVER_PORT` variable.
+   * A value to use for autodetecting the value of `SERVER_PORT` variable.
    *
    * When this option is undefined, the network protocol is automatically detected from a request.
    */
@@ -138,9 +137,6 @@ export async function executeCgi(
     SERVER_PORT: serverPort,
     SERVER_PROTOCOL: options.serverProtocol ?? "HTTP/1.1", // Request doesn't expose the exact version
     SERVER_SOFTWARE: options.serverSoftware ?? "deno-cgi",
-
-    // De-facto usage
-    HTTPS: networkProtocol === "https" ? "on" : "off",
   };
 
   // Forward common incoming headers as CGI vars (HTTP_*), plus content headers
@@ -468,9 +464,6 @@ const reservedEnvNames = new Set([
   "SERVER_PORT",
   "SERVER_PROTOCOL",
   "SERVER_SOFTWARE",
-
-  // De-facto usage
-  "HTTPS",
 ]);
 
 const reservedEnvPrefixes = [
