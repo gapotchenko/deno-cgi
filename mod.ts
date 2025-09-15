@@ -66,11 +66,25 @@ export type CgiExecutionOptions = {
   remoteHost?: string;
 
   /**
+   *  A value to use for `SCRIPT_NAME` environment variable of CGI.
+   *
+   *  When this option is undefined, the environment variable is set to an empty value.
+   */
+  scriptName?: string;
+
+  /**
    *  A value to use for `PATH_INFO` environment variable of CGI.
    *
    *  When this option is undefined, the environment variable is set to an empty value.
    */
   pathInfo?: string;
+
+  /**
+   *  A value to use for `PATH_TRANSLATED` environment variable of CGI.
+   *
+   *  When this option is undefined, the environment variable is set to an empty value.
+   */
+  pathTranslated?: string;
 
   /**
    * A value to use for setting the value of `HTTPS` CGI environment variable.
@@ -113,11 +127,13 @@ export async function executeCgi(
     // Standard (RFC 3875)
     GATEWAY_INTERFACE: "CGI/1.1",
     PATH_INFO: options.pathInfo ?? "",
+    PATH_TRANSLATED: options.pathTranslated ?? "",
     QUERY_STRING: url.search.length > 1 ? url.search.slice(1) : "",
     REMOTE_ADDR: options.remoteAddr ?? "", // Request doesn't expose remote address
     REMOTE_HOST: options.remoteHost ?? "", // Request doesn't expose remote host
     REQUEST_METHOD: request.method,
     REQUEST_URI: url.pathname + (url.search ?? ""),
+    SCRIPT_NAME: options.scriptName ?? "",
     SERVER_NAME: serverName ?? "",
     SERVER_PORT: serverPort,
     SERVER_PROTOCOL: options.serverProtocol ?? "HTTP/1.1", // Request doesn't expose the exact version
@@ -434,15 +450,20 @@ export function isReservedCgiEnvVar(name: string): boolean {
 
 const reservedEnvNames = new Set([
   // Standard (RFC 3875)
+  "AUTH_TYPE",
   "CONTENT_TYPE",
   "CONTENT_LENGTH",
   "GATEWAY_INTERFACE",
   "PATH_INFO",
+  "PATH_TRANSLATED",
   "QUERY_STRING",
   "REMOTE_ADDR",
   "REMOTE_HOST",
+  "REMOTE_IDENT",
+  "REMOTE_USER",
   "REQUEST_METHOD",
   "REQUEST_URI",
+  "SCRIPT_NAME",
   "SERVER_NAME",
   "SERVER_PORT",
   "SERVER_PROTOCOL",
