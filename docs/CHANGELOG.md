@@ -4,7 +4,7 @@
 
 Release date: September 17, 2025
 
-- Fixed issue with passing HTTP headers containing multiple `-` characters
+- Fixed handling of HTTP headers with names containing multiple `-` characters
 
 ## 1.0.0
 
