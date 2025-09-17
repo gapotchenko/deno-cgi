@@ -80,7 +80,7 @@ be dangerous. Make sure to:
 - Consider sandboxing (e.g. using
   [bwrap](https://github.com/containers/bubblewrap) or containers)
 
-To assist with validation, the module provides `isReservedCgiEnvVar` function.
+To assist with user input validation, the module provides `isReservedCgiEnvVar` function.
 
 ## Packages
 
