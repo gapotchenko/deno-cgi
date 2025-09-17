@@ -165,7 +165,7 @@ export async function executeCgi(
 
   // Forward common incoming headers as CGI vars (HTTP_*), plus content headers
   for (const [k, v] of request.headers) {
-    const upper = k.toUpperCase().replace("-", "_");
+    const upper = k.toUpperCase().replaceAll("-", "_");
     if (upper === "CONTENT_TYPE") {
       env["CONTENT_TYPE"] = v;
     } else if (upper === "CONTENT_LENGTH") {

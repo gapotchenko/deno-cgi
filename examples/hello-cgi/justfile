@@ -38,5 +38,6 @@ check:
 lint:
     deno lint
 
+# Run the example
 run:
     deno run --allow-net --allow-run main.ts
