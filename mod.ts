@@ -193,17 +193,17 @@ export async function executeCgi(
   (async () => {
     try {
       if (request.body) {
-        await request.body.pipeTo(child.stdin);
+        try {
+          await request.body.pipeTo(child.stdin);
+        } catch {
+          // ignore broken pipe etc.
+          await child.stdin?.close();
+        }
       } else {
-        child.stdin?.close();
+        await child.stdin?.close();
       }
     } catch {
-      // ignore broken pipe etc.
-      try {
-        child.stdin?.close();
-      } catch {
-        /* ignore */
-      }
+      // ignore
     }
   })();
 

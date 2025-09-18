@@ -1,5 +1,12 @@
 # What's New in `deno-cgi`
 
+## 1.0.2
+
+Release date: September 18, 2025
+
+- Fixed issue that could lead to "Writable stream is closed or errored"
+  unhandled exception
+
 ## 1.0.1
 
 Release date: September 17, 2025
