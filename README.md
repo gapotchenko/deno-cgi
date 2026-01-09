@@ -25,6 +25,12 @@ Deno.serve(async (request) =>
 Start the server with `deno run` and visit `http://localhost:8000` to see the
 CGI output.
 
+This example CGI server handles HTTP requests by executing a small shell
+script that forms a simple "Hello CGI" HTTP response.
+
+By pointing a CGI server to other programs, you can use them as HTTP request handlers,
+thereby making them accessible through an HTTP interface.
+
 ## Modes of Operation
 
 ### Batch mode (default)
